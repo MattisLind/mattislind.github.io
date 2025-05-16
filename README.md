@@ -1,3 +1,3 @@
 # Datormuseum projects page
 
-[VAX Station II/GPX project](1_VAXStaionIIGPX.md)
+[VAXStation II/GPX project](1_VAXStationIIGPX.md)
