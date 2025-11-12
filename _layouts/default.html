@@ -9,33 +9,33 @@
   </head>
 
   <body>
-    <div class="layout">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="site-title">
-          <a href="{{ '/' | relative_url }}">Datormuseum Projects</a>
-        </div>
+    <header class="site-header">
+      <!-- Logo section -->
+      <div class="logo">
+        <a href="{{ '/' | relative_url }}">
+          <img src="{{ '/assets/logo.png' | relative_url }}" alt="Datormuseum logo">
+        </a>
+      </div>
 
-        <nav class="nav">
-          <h2>Navigation</h2>
-          <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/VAXStationIIGPX' | relative_url }}">VAXStation II/GPX</a></li>
-          </ul>
+      <!-- Navigation bar -->
+      <nav class="navbar">
+        <ul>
+          <li><a href="{{ '/' | relative_url }}">Home</a></li>
+          <li><a href="{{ '/VAXStationIIGPX' | relative_url }}">VAXStation II/GPX</a></li>
+          {%- for post in site.posts -%}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </header>
 
-          <h2>Articles</h2>
-          <ul>
-            {%- for post in site.posts -%}
-              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-            {%- endfor -%}
-          </ul>
-        </nav>
-      </aside>
+    <!-- Main content -->
+    <main class="content">
+      {{ content }}
+    </main>
 
-      <!-- Main content -->
-      <main class="content">
-        {{ content }}
-      </main>
-    </div>
+    <footer class="footer">
+      <p>© {{ "now" | date: "%Y" }} Datormuseum</p>
+    </footer>
   </body>
 </html>
