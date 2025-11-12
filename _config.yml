@@ -1,0 +1,11 @@
+# No theme -> we fully control the HTML; no auto "Mattis Lind" header.
+# (GitHub Pages builds Jekyll automatically on main branch.)
+title: ""                # Intentionally blank so nothing leaks into layouts
+description: ""          # Keep empty unless you want SEO descriptions
+url: "https://github.datormuseum.se"  # Your custom domain
+baseurl: ""              # Root of the site
+permalink: /:year/:month/:day/:title/  # Nice blog URLs
+markdown: kramdown       # Default GitHub Pages markdown engine
+plugins:
+  - jekyll-seo-tag       # Approved by GitHub Pages for basic SEO
+# Note: We are not setting 'theme:' so no remote theme is applied.
