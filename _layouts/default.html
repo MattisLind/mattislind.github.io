@@ -9,30 +9,41 @@
   </head>
 
   <body>
+    <!-- Top logo banner -->
     <header class="site-header">
-      <!-- Logo section -->
-      <div class="logo">
-        <a href="{{ '/' | relative_url }}">
-          <img src="{{ 'http://www.datormuseum.se/customLogo.gif' | absolute_url }}" alt="Datormuseum logo">
-        </a>
-      </div>
-
-      <!-- Navigation bar -->
-      <nav class="navbar">
-        <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/VAXStationIIGPX' | relative_url }}">VAXStation II/GPX</a></li>
-          {%- for post in site.posts -%}
-            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-          {%- endfor -%}
-        </ul>
-      </nav>
+      <a href="{{ '/' | relative_url }}">
+        <img src="http://www.datormuseum.se/customLogo.gif" alt="Datormuseum logo">
+      </a>
     </header>
 
-    <!-- Main content -->
-    <main class="content">
-      {{ content }}
-    </main>
+    <!-- Two-column layout -->
+    <div class="layout">
+      <!-- Sidebar navigation -->
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/VAXStationIIGPX' | relative_url }}">VAXStation II/GPX</a></li>
+            <li><a href="#">Computers</a></li>
+            <li><a href="#">Documentation & Software</a></li>
+            <li><a href="#">Peripherals</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <h2>Articles</h2>
+          <ul>
+            {%- for post in site.posts -%}
+              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
 
     <footer class="footer">
       <p>© {{ "now" | date: "%Y" }} Datormuseum</p>
