@@ -1,8 +1,95 @@
-/* Enkel, ren layout utan header */
-html { line-height: 1.5; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-body { margin: 0; padding: 0 1rem; }
-.container { max-width: 800px; margin: 2rem auto; }
-h1 { margin-top: 1.5rem; }
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-.footer { margin: 3rem 0; font-size: 0.9rem; opacity: 0.7; }
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #f7f7f7;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Layout grid */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background: #e0e0e0;
+  padding: 1.5rem;
+  border-right: 1px solid #ccc;
+}
+
+.site-title a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.nav {
+  margin-top: 1.5rem;
+}
+
+.nav h2 {
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 0.2rem;
+}
+
+.nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav ul li {
+  margin: 0.3rem 0;
+}
+
+.nav ul li a {
+  color: #222;
+  text-decoration: none;
+}
+
+.nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content area */
+.content {
+  flex: 1;
+  background: white;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin-top: 1rem;
+  color: #111;
+}
+
+/* Links in content */
+.content a {
+  color: #0056b3;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* Simple responsive tweak */
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+}
