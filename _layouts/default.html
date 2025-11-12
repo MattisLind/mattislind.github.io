@@ -3,16 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {%- seo -%} <!-- Basic SEO tags via jekyll-seo-tag -->
+    {%- seo -%}
     <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
     <title>{{ page.title }}</title>
   </head>
+
   <body>
-    <main class="container">
-      {{ content }} <!-- Render page/post content here -->
-    </main>
-    <footer class="footer">
-      <!-- Optional tiny footer; keep it empty if you want a super-clean look -->
-    </footer>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="site-title">
+          <a href="{{ '/' | relative_url }}">Datormuseum Projects</a>
+        </div>
+
+        <nav class="nav">
+          <h2>Navigation</h2>
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/VAXStationIIGPX' | relative_url }}">VAXStation II/GPX</a></li>
+          </ul>
+
+          <h2>Articles</h2>
+          <ul>
+            {%- for post in site.posts -%}
+              <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main content -->
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
   </body>
 </html>
